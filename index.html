@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detection</title>
+</head>
+<body>
+    <h1>Phishing Detection</h1>
+    <form method="POST" action="/">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Check</button>
+    </form>
+    {% if phishing_result is not none %}
+        {% if phishing_result %}
+            <p style="color: red;">Warning: This URL may be a phishing attempt.</p>
+        {% else %}
+            <p style="color: green;">This URL seems safe.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
